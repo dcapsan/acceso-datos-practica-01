@@ -26,4 +26,12 @@ public class Unidor {
         }
         return sinCliente;
     }
+
+    public static void eliminarDniDePedidos(List<Cliente> clientes) {
+        for (Cliente c : clientes) {
+            for (Pedido p : c.getPedidos()) {
+                p.setDni(null);
+            }
+        }
+    }
 }

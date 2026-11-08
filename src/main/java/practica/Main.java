@@ -13,10 +13,10 @@ public class Main {
             sinCliente.forEach(p ->
                     System.out.println("Aviso: pedido " + p.getId() + " sin cliente (DNI " + p.getDni() + ")"));
 
-            for (Cliente c : clientes) {
-                System.out.println(c.getDni() + " " + c.getNombre() + " -> " + c.getPedidos().size() + " pedido(s)");
-                c.getPedidos().forEach(p -> System.out.println("    " + p));
-            }
+            Unidor.eliminarDniDePedidos(clientes);
+
+            EscritorXml.escribir(clientes, "salida/clientes_pedidos.xml");
+            System.out.println("Fichero generado: salida/clientes_pedidos.xml");
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
