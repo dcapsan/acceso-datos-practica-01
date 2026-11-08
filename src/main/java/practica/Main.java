@@ -16,6 +16,12 @@ public class Main {
             Unidor.eliminarDniDePedidos(clientes);
 
             EscritorXml.escribir(clientes, "salida/clientes_pedidos.xml");
+            
+            FicheroAleatorio.escribir(clientes, "salida/clientes.dat");
+            int n = FicheroAleatorio.contarRegistros("salida/clientes.dat");
+            System.out.println("Registros en el fichero aleatorio: " + n);
+            System.out.println(FicheroAleatorio.leer("salida/clientes.dat", 1));
+            System.out.println(FicheroAleatorio.leer("salida/clientes.dat", n));
             System.out.println("Fichero generado: salida/clientes_pedidos.xml");
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
