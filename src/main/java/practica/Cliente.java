@@ -1,4 +1,7 @@
 package practica;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Cliente {
     private final String dni;
@@ -6,6 +9,7 @@ public class Cliente {
     private final String direccion;
     private final String telefono;
     private final String email;
+    private final List<Pedido> pedidos = new ArrayList<>();
 
     public Cliente(String dni, String nombre, String direccion, String telefono, String email) {
         this.dni = dni;
@@ -20,6 +24,8 @@ public class Cliente {
     public String getDireccion() { return direccion; }
     public String getTelefono() { return telefono; }
     public String getEmail() { return email; }
+    public List<Pedido> getPedidos() { return pedidos; }
+
 
     @Override
     public String toString() {
