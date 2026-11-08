@@ -41,7 +41,6 @@ public class LectorPedidos {
         }
     }
 
-    // Acepta lista, objeto con clave "articulo" o artículo directo
     private static void recoger(JsonElement el, List<Articulo> destino) {
         if (el.isJsonArray()) {
             for (JsonElement hijo : el.getAsJsonArray()) {

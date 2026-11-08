@@ -6,14 +6,17 @@ public class Main {
     public static void main(String[] args) {
         try {
             List<Cliente> clientes = LectorClientes.leer("datos/clientes.xml");
-            System.out.println("Clientes leídos: " + clientes.size());
-
             List<Pedido> pedidos = LectorPedidos.leer("datos/pedidos.json");
-            System.out.println("Pedidos leídos: " + pedidos.size());
-            pedidos.forEach(p -> {
-                System.out.println(p);
-                p.getArticulos().forEach(a -> System.out.println("    " + a));
-            });
+            System.out.println("Clientes: " + clientes.size() + " | Pedidos: " + pedidos.size());
+
+            List<Pedido> sinCliente = Unidor.unir(clientes, pedidos);
+            sinCliente.forEach(p ->
+                    System.out.println("Aviso: pedido " + p.getId() + " sin cliente (DNI " + p.getDni() + ")"));
+
+            for (Cliente c : clientes) {
+                System.out.println(c.getDni() + " " + c.getNombre() + " -> " + c.getPedidos().size() + " pedido(s)");
+                c.getPedidos().forEach(p -> System.out.println("    " + p));
+            }
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
