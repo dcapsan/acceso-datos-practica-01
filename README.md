@@ -31,6 +31,12 @@ Se ejecuta con `mvn -q compile exec:java`.
 DNI, nombre, dirección, teléfono, email, número de pedidos e importe total.
 Los textos se rellenan con espacios hasta su longitud máxima.
 
+## Consulta del fichero aleatorio
+Al terminar la generación, el programa pide por teclado una posición (`2`),
+un rango (`5-9`) o varias posiciones (`3,8,12`). La entrada se valida y se vuelve a
+pedir hasta que es correcta. Las posiciones válidas van de 1 al número de registros.
+Todas las excepciones se capturan para que el programa no termine de forma inesperada.
+
 ## Estado del proyecto
 - [x] Lectura del XML de clientes
 - [x] Modelo de datos (Cliente, Pedido, Articulo)
@@ -39,7 +45,7 @@ Los textos se rellenan con espacios hasta su longitud máxima.
 - [x] Eliminar DNI y poner ID como atributo
 - [x] Escritura del XML con indentación
 - [x] Fichero de acceso aleatorio
-- [ ] Consulta por teclado con validación
+- [x] Consulta por teclado con validación
 
 ## Compilar y ejecutar
     mvn -q compile exec:java
