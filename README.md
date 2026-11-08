@@ -13,10 +13,14 @@ en un único XML, con escritura y consulta en fichero de acceso aleatorio.
 - `datos/`: ficheros de entrada (`clientes.xml`, `pedidos.json`).
 - `src/main/java/practica/`: código fuente.
 
+## Notas sobre el JSON
+El campo `articulos` aparece en dos formatos (lista de objetos `{"articulo": {...}}`
+u objeto `{"articulo": [...]}`). `LectorPedidos` los admite ambos.
+
 ## Estado del proyecto
 - [x] Lectura del XML de clientes
 - [x] Modelo de datos (Cliente, Pedido, Articulo)
-- [ ] Lectura del JSON de pedidos
+- [x] Lectura del JSON de pedidos
 - [ ] Unión por DNI
 - [ ] Eliminar DNI y poner ID como atributo
 - [ ] Escritura del XML con indentación
