@@ -17,16 +17,19 @@ en un único XML, con escritura y consulta en fichero de acceso aleatorio.
 El campo `articulos` aparece en dos formatos (lista de objetos `{"articulo": {...}}`
 u objeto `{"articulo": [...]}`). `LectorPedidos` los admite ambos.
 
+## Unión de datos
+`Unidor` indexa los clientes por DNI y asigna cada pedido a su cliente.
+Los pedidos cuyo DNI no existe en los clientes se avisan por pantalla.
+
 ## Estado del proyecto
 - [x] Lectura del XML de clientes
 - [x] Modelo de datos (Cliente, Pedido, Articulo)
 - [x] Lectura del JSON de pedidos
-- [ ] Unión por DNI
+- [x] Unión por DNI
 - [ ] Eliminar DNI y poner ID como atributo
 - [ ] Escritura del XML con indentación
 - [ ] Fichero de acceso aleatorio
 - [ ] Consulta por teclado con validación
 
 ## Compilar y ejecutar
-    mvn compile
-    java -cp target/classes practica.Main
+    mvn -q compile exec:java
