@@ -26,6 +26,11 @@ El resultado se guarda en `salida/clientes_pedidos.xml`. Cada pedido lleva su ID
 atributo (`<pedido id="P001">`) y no repite el DNI, que ya está en el cliente.
 Se ejecuta con `mvn -q compile exec:java`.
 
+## Fichero de acceso aleatorio
+`salida/clientes.dat` guarda un registro de longitud fija (268 bytes) por cliente:
+DNI, nombre, dirección, teléfono, email, número de pedidos e importe total.
+Los textos se rellenan con espacios hasta su longitud máxima.
+
 ## Estado del proyecto
 - [x] Lectura del XML de clientes
 - [x] Modelo de datos (Cliente, Pedido, Articulo)
@@ -33,7 +38,7 @@ Se ejecuta con `mvn -q compile exec:java`.
 - [x] Unión por DNI
 - [x] Eliminar DNI y poner ID como atributo
 - [x] Escritura del XML con indentación
-- [ ] Fichero de acceso aleatorio
+- [x] Fichero de acceso aleatorio
 - [ ] Consulta por teclado con validación
 
 ## Compilar y ejecutar
