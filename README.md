@@ -21,13 +21,18 @@ u objeto `{"articulo": [...]}`). `LectorPedidos` los admite ambos.
 `Unidor` indexa los clientes por DNI y asigna cada pedido a su cliente.
 Los pedidos cuyo DNI no existe en los clientes se avisan por pantalla.
 
+## Salida
+El resultado se guarda en `salida/clientes_pedidos.xml`. Cada pedido lleva su ID como
+atributo (`<pedido id="P001">`) y no repite el DNI, que ya está en el cliente.
+Se ejecuta con `mvn -q compile exec:java`.
+
 ## Estado del proyecto
 - [x] Lectura del XML de clientes
 - [x] Modelo de datos (Cliente, Pedido, Articulo)
 - [x] Lectura del JSON de pedidos
 - [x] Unión por DNI
-- [ ] Eliminar DNI y poner ID como atributo
-- [ ] Escritura del XML con indentación
+- [x] Eliminar DNI y poner ID como atributo
+- [x] Escritura del XML con indentación
 - [ ] Fichero de acceso aleatorio
 - [ ] Consulta por teclado con validación
 
